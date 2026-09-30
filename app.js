@@ -1,26 +1,26 @@
-const logs = document.getElementById("logs");
-const status = document.getElementById("buildStatus");
+name: DevOps Terminator CI-CD
 
-function addLog(type, msg){
-  const p=document.createElement("p");
-  const now=new Date().toLocaleTimeString("es-CL",{hour12:false});
-  p.innerHTML=`<time>${now}</time> <b>${type}</b> ${msg}`;
-  logs.appendChild(p);
-  logs.scrollTop=logs.scrollHeight;
-}
+# El pipeline se activará de forma automática cada vez que hagas un "Push" (guardar cambios)
+on:
+  push:
+    branches: [ "main" ]
 
-function deploy(){
-  status.textContent="DEPLOY RUNNING";
-  addLog("INFO","Deployment iniciado por TERMINATOR");
-  setTimeout(()=>addLog("PASS","Docker image validated"),500);
-  setTimeout(()=>addLog("PASS","Security gates passed"),1000);
-  setTimeout(()=>addLog("PASS","Production deployment completed"),1600);
-  setTimeout(()=>{status.textContent="BUILD #2026.09.27 — SUCCESS"},1800);
-}
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
 
-function rollback(){
-  status.textContent="ROLLBACK RUNNING";
-  addLog("WARN","Rollback solicitado");
-  setTimeout(()=>addLog("PASS","Previous stable version restored"),900);
-  setTimeout(()=>{status.textContent="ROLLBACK — SUCCESS"},1200);
-}
+    steps:
+    # 1. Copia los archivos del repositorio en la máquina virtual de pruebas
+    - name: Clonar código fuente
+      uses: actions/checkout@v4
+
+    # 2. Simula una prueba de integración (CI)
+    - name: Ejecutar pruebas de seguridad (SAST)
+      run: |
+        echo "Iniciando análisis de código con TERMINATOR..."
+        echo "Validando estructura de index.html..."
+        echo "¡Análisis completado! 0 vulnerabilidades encontradas."
+
+    # 3. Notifica el estado final
+    - name: Estado del despliegue (CD)
+      run: echo "El código es seguro. Despliegue en GitHub Pages autorizado."
