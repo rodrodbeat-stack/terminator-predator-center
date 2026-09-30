@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TERMINATOR × PREDATOR | DevOps Command Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+  <header class="topbar">
+    <div class="brand"><span>TERMINATOR</span><b>×</b><span>PREDATOR</span></div>
+    <div class="status"><i></i> SYSTEM ONLINE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DEVOPS COMMAND CENTER</p>
+        <h1>AUTOMATE.<br><span>OBSERVE.</span><br>RECOVER.</h1>
+        <p class="lead">CI/CD, Cloud, DevSecOps y observabilidad en un único centro de operaciones.</p>
+        <div class="actions">
+          <button onclick="deploy()">🚀 DEPLOY</button>
+          <button class="secondary" onclick="rollback()">↩ ROLLBACK</button>
+        </div>
+      </div>
+      <div class="core">
+        <div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div>
+        <div class="coretext">PREDATOR<br><small>MONITORING</small></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card terminator">
+        <div class="cardhead"><span>🤖 TERMINATOR</span><em>CI/CD</em></div>
+        <div class="pipeline">
+          <div class="step done">GITHUB</div><div class="arrow">↓</div>
+          <div class="step done">BUILD</div><div class="arrow">↓</div>
+          <div class="step done">TEST</div><div class="arrow">↓</div>
+          <div class="step done">SECURITY</div><div class="arrow">↓</div>
+          <div class="step active">DOCKER</div><div class="arrow">↓</div>
+          <div class="step">DEPLOY</div>
+        </div>
+      </article>
+
+      <article class="card predator">
+        <div class="cardhead"><span>👁 PREDATOR</span><em>OBSERVABILITY</em></div>
+        <div class="metrics">
+          <div><small>CPU</small><strong>42%</strong><span class="bar"><i style="width:42%"></i></span></div>
+          <div><small>MEMORY</small><strong>61%</strong><span class="bar"><i style="width:61%"></i></span></div>
+          <div><small>LATENCY</small><strong>84 ms</strong><span class="bar"><i style="width:28%"></i></span></div>
+          <div><small>ERROR RATE</small><strong>0.08%</strong><span class="bar"><i style="width:8%"></i></span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><span>☁ CLOUD</span><em>MULTI-CLOUD</em></div>
+        <div class="clouds">
+          <div><b>AWS</b><span>ONLINE</span></div>
+          <div><b>AZURE</b><span>ONLINE</span></div>
+          <div><b>GCP</b><span>ONLINE</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardhead"><span>🛡 DEVSECOPS</span><em>SECURITY</em></div>
+        <div class="checks">
+          <p>✓ SAST <span>PASSED</span></p>
+          <p>✓ DEPENDENCY SCAN <span>PASSED</span></p>
+          <p>✓ SECRET SCAN <span>PASSED</span></p>
+          <p>✓ CONTAINER SCAN <span>PASSED</span></p>
+          <p>✓ IaC SCAN <span>PASSED</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="console card">
+      <div class="cardhead"><span>▣ COMMAND LOG</span><em id="buildStatus">BUILD #2026.09.27</em></div>
+      <div id="logs" class="logs">
+        <p><time>21:04:01</time> <b>INFO</b> GitHub webhook received</p>
+        <p><time>21:04:03</time> <b>PASS</b> Tests completed successfully</p>
+        <p><time>21:04:07</time> <b>PASS</b> Security scan completed</p>
+        <p><time>21:04:12</time> <b>PASS</b> Docker image built</p>
+        <p><time>21:04:18</time> <b>INFO</b> Predator monitoring active</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>TERMINATOR × PREDATOR · DEVOPS COMMAND CENTER · <span>ALL SYSTEMS OPERATIONAL</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
